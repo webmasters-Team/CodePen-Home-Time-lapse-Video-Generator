@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webmasters small projects</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Time-lapse Video Generator</title>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+	<div class="container mx-auto p-8 bg-white rounded-lg shadow-md">
+		<h1 class="text-3xl font-bold mb-6 text-center">Time-lapse Video Generator</h1>
+
+		<div class="mb-6">
+			<label for="videoUpload" class="block mb-2 font-semibold">Upload Video:</label>
+			<input type="file" id="videoUpload" accept="video/*" class="hidden">
+			<label for="videoUpload" class="inline-block w-full py-2 px-4 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600 transition duration-300 text-center">
+				Choose Video
+			</label>
+			<span id="fileNameDisplay" class="mt-2 block text-sm text-gray-600"></span>
+		</div>
+
+		<div class="mb-6">
+			<label for="durationRange" class="block mb-2 font-semibold">Time-lapse Duration (seconds):</label>
+			<input type="range" id="durationRange" min="1" max="60" value="10" step="0.1" class="w-full">
+			<span id="durationValue" class="block mt-2 text-center">10.0 seconds</span>
+		</div>
+
+		<button id="generateBtn" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300">Generate Time-lapse</button>
+
+		<div id="videoContainer" class="mt-8">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="bg-gray-200 p-4 rounded">
+            <h3 class="text-xl font-semibold mb-2">Original Video</h3>
+            <video id="originalVideo" controls class="w-full"></video>
+        </div>
+        <div class="bg-gray-200 p-4 rounded">
+            <h3 class="text-xl font-semibold mb-2">Time-lapse Video</h3>
+            <video id="timelapsevideo" controls class="w-full"></video>
+        </div>
+    </div>
+    <button id="downloadBtn" class="mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition duration-300" disabled>Download Time-lapse</button>
+</div>
+
+		<div class="mt-8 text-sm text-gray-600">
+			<p>This web app was created by <a href="" class="text-blue-500 hover:underline">Webmasters</a> (AI assistant) </a></p>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+		<div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+			<div class="mt-3 text-center">
+				<h3 class="text-lg leading-6 font-medium text-gray-900" id="modalTitle"></h3>
+				<div class="mt-2 px-7 py-3">
+					<p class="text-sm text-gray-500" id="modalContent"></p>
+					<div id="progressContainer" class="mt-4 hidden">
+						<progress id="progressBar" class="w-full" value="0" max="100"></progress>
+						<p id="progressText" class="mt-2 text-xs text-gray-500">0%</p>
+					</div>
+				</div>
+				<div class="items-center px-4 py-3">
+					<button id="modalCloseBtn" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+<script src="script.js"></script>    
+</body>
+</html>
